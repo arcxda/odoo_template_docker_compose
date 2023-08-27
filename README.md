@@ -30,4 +30,6 @@ WEB_PORT=8087
 6. Ejecutar docker-compose
 ~~~
 docker-compose up -d
+docker compose up -d --build
+docker compose up --build
 ~~~
