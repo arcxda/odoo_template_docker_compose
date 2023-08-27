@@ -1,6 +1,7 @@
 version: '3'
 services:
   web:
+    platform: linux/x86_64
     container_name: ${WEB_HOST}
     image: ${WEB_IMAGE_NAME}:${WEB_IMAGE_TAG}
     build: ./
@@ -15,6 +16,7 @@ services:
       - ./addons-customize:/mnt/extra-addons-customize
     entrypoint: "/usr/bin/odoo -c /etc/odoo/odoo.conf"
   db:
+    platform: linux/x86_64
     container_name: ${DB_HOST}
     image: ${DB_IMAGE}:${DB_TAG}
     environment:
@@ -26,6 +28,7 @@ services:
       - "${DB_PORT}:5432"
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
+    restart: always
 volumes:
   odoo-db-data:
   odoo-web-data:
