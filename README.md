@@ -33,3 +33,7 @@ docker-compose up -d
 docker compose up -d --build
 docker compose up --build
 ~~~
+7. Stop Odoo
+~~~
+docker compose down
+~~
